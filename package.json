@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Custom URL shortener service using Node.js, Express, and MongoDB",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "author": "",
   "license": "ISC",
