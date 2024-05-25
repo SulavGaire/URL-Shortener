@@ -1,5 +1,5 @@
-import express form "express"
+import express from "express"
 
 const app = express();
 
-export default app;
+export default app ;
