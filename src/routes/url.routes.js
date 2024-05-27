@@ -1,7 +1,10 @@
 import { Router } from "express";
-import {shortUrl} from "../controllers/url.controller.js";
+import {short} from "../controllers/url.controller.js";
 
 const router = Router()
 
-router.route("/shortUrl").get(shortUrl);
+router.route("/").get((req,res)=>{
+    res.status(500).json({ message: '/ called' })
+})
+router.route("/short").post(short);
 export default router;

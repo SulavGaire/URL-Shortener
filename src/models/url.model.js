@@ -1,24 +1,24 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose, { Schema } from "mongoose";
+import { customAlphabet } from "nanoid";
+
+const nanoid = customAlphabet("1234567890abcdef", 10);
 
 const urlSchema = new Schema(
   {
-    original: {
+    full: {
       type: String,
       required: true,
     },
     short: {
       type: String,
       required: true,
-      unique: true,
+      default: () => nanoid(),
     },
-    visitHistory: [
-      {
-        timestamp: {
-          type: Date,
-          default: Date.now,
-        },
-      },
-    ],
+    clicks: {
+      type: Number,
+      required: true,
+      default: 0,
+    }
   },
   {
     timestamps: true,
@@ -26,4 +26,3 @@ const urlSchema = new Schema(
 );
 
 export const Url = mongoose.model("Url", urlSchema);
-

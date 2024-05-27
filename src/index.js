@@ -10,6 +10,7 @@ connectDb()
 .then(()=>{
   app.listen(process.env.PORT,()=>{
     console.log(`\n ⚙️ Server is running on PORT: ${process.env.PORT}`);
+    console.log("Base URL","http://localhost:8000/api/v1/");
   });
 })
 .catch((err)=>{
