@@ -12,7 +12,8 @@ const urlSchema = new Schema(
     short: {
       type: String,
       required: true,
-      default: () => nanoid(),
+      default: () => nanoid(5),
+      unique: true,
     },
     clicks: {
       type: Number,
